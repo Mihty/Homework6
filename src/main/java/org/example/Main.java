@@ -1,0 +1,13 @@
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+    MyArray myArray = new MyArray(5);
+    myArray.add("Елемент 1");
+    myArray.add("Елемент 2");
+    myArray.add("Елемент 3");
+
+    System.out.println("Довжина масиву: " + myArray.length());
+}
+}
+
