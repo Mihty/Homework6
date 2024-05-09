@@ -4,23 +4,27 @@ public class MyArray {
     private String[] array;
     private int size;
 
-    // Ініціалізація масиву заданого розміру
     public MyArray(int capacity) {
         array = new String[capacity];
         size = 0;
     }
 
-    // Додавання елемента в масив
+    public int length() {
+        return size;
+    }
     public void add(String element) {
         if (size < array.length) {
-            array[size++] = element;
+            array[size] = element;
+            size++;
         } else {
-            System.out.println("Масив повний. Неможливо додати елемент.");
+            System.out.println("Масив заповнений, неможливо додати елемент.");
         }
     }
 
-    // Отримання довжини масиву
-    public int length() {
-        return size;
+    public String get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Індекс виходить за межі масиву.");
+        }
+        return array[index];
     }
 }
